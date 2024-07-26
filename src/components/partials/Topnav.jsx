@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from '../../utils/axios'
+import Noimage from '../../Assets/Noimage.jpg'
 
 const Topnav = () => {
 
@@ -28,7 +29,7 @@ const Topnav = () => {
 
 
   return (
-    <div className='w-full h-[10vh]  relative ml-[15%] flex justify-start items-center '>
+    <div className='w-[80%] h-[10vh]  relative mx-auto flex justify-start items-center '>
       <i className="text-zinc-400 text-3xl  ri-search-2-line"></i>
       <input
         onChange={(e) => setquery(e.target.value)}
@@ -41,10 +42,10 @@ const Topnav = () => {
      
 
 
-      <div className='absolute  w-[60%] max-h-[50vh] bg-zinc-100   top-[100%] overflow-auto'>
+      <div className='absolute  w-[55%] max-h-[50vh] bg-zinc-100 left-16   top-[100%] overflow-auto'>
         {searches.map((s,i) => (
              <Link key={i}  className='hover:text-black gap-10 hover:bg-zinc-300 font-semibold text-zinc-600 w-[100%] p-8 flex justify-start items-center border-b-2 border-zinc-100'>
-             <img src={`https://image.tmdb.org/t/p/original/${s.backdrop_path || s.profile_path}`}
+             <img src={s.backdrop_path || s.profile_path ? `https://image.tmdb.org/t/p/original/${s.backdrop_path || s.profile_path}`: Noimage}
                 className='w-[10vh] h-[10vh] object-cover rounded shadow-2xl'
              alt="" />
              <span className=''>{s.name || s.title || s.original_name || s.original_title}</span>
