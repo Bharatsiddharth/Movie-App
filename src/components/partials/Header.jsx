@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = ({data}) => {
-    console.log(data)
+    // console.log(data)
   return (
     <div 
     style={{
@@ -23,9 +23,9 @@ const Header = ({data}) => {
       <p className='w-[70%] mt-5'>{data.overview.slice(0,200)}...<Link className='text-blue-400'>More</Link></p>
 
         <p className='flex gap-2'>
-        <i class="text-yellow-300 ri-megaphone-fill"></i>
+        <i className="text-yellow-300 ri-megaphone-fill"></i>
         {" "}{data.release_date || "no info"}
-        <i class="text-yellow-300 ri-album-fill"></i>{data.media_type.toUpperCase()}
+        <i className="text-yellow-300 ri-album-fill"></i>{data.media_type.toUpperCase()}
         </p>
         <Link className='bg-[#6556CD] p-4 rounded font-semibold mt-5'>Watch Trailer</Link>
     </div>
