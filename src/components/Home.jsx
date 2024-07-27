@@ -49,11 +49,11 @@ console.log(trending)
     
  
         <Sidebar/>
-        <div className='w-[80%] h-full  overflow-y-auto overflow-x-hidden'>
+        <div className='w-[100%] h-full  overflow-y-auto overflow-x-hidden'>
             <Topnav/>
             <Header data={wallpaper} />
 
-            <div className=' flex justify-between px-10 pt-10'>
+            <div className='w-[80%]  max-[1025px]:w-[100%] min-[1025px]:ml-[20%] flex justify-between px-10 pt-10'>
       <h1 className=' text-2xl font-semibold text-zinc-300'>Trending</h1>
 
       <Dropdown  title="filter" options={["tv", "movie", "all"]} func={(e) =>  setcategory(e.target.value)} />

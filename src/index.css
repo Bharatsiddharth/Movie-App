@@ -51,6 +51,15 @@ select::-ms-expand{
   border-radius: 0.25em;
 }
 
+@media (max-width: 620px) {
+  .select{
+    width: 8em !important;
+  }
+  select{
+    width: 8em !important;
+  }
+}
+
 .select::after{
   content: "\25BC";
   position: absolute;
