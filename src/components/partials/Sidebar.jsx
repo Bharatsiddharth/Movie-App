@@ -33,9 +33,9 @@ const Sidebar = () => {
           <h1 className="text-white font-semibold text-lg md:text-xl mt-5 md:mt-10 mb-3 md:mb-5">
             New Feeds
           </h1>
-          <Link
+          <Link to='/trending'
             className="hover:bg-[#6556CD] hover:text-white p-1 md:p-2 rounded duration-300"
-            to="#"
+            
           >
             <i className="ri-fire-fill"></i>Trending
           </Link>

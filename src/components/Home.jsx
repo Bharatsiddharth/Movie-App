@@ -5,6 +5,7 @@ import Topnav from './partials/Topnav'
 import Header from './partials/Header'
 import Horizontalcards from './partials/Horizontalcards'
 import Dropdown from './partials/Dropdown'
+import Loading from './Loading'
 
 const Home = () => {
     document.title = 'Pico || Home'
@@ -63,7 +64,7 @@ console.log(trending)
         </div>
     
     </>
-  ): <h1>Loading</h1>
+  ): <Loading/>
 }
 
 export default Home
