@@ -41,25 +41,25 @@ const Sidebar = () => {
           </Link>
           <Link
             className="hover:bg-[#6556CD] hover:text-white p-1 md:p-2 rounded duration-300"
-            to="#"
+            to="/popular"
           >
             <i className="ri-bard-fill"></i>Popular
           </Link>
           <Link
             className="hover:bg-[#6556CD] hover:text-white p-1 md:p-2 rounded duration-300"
-            to="#"
+            to="/movie"
           >
             <i className="ri-movie-2-line"></i>Movies
           </Link>
           <Link
             className="hover:bg-[#6556CD] hover:text-white p-1 md:p-2 rounded duration-300"
-            to="#"
+            to="/tvshows"
           >
             <i className="ri-tv-2-line"></i>Tv Shows
           </Link>
           <Link
             className="hover:bg-[#6556CD] hover:text-white p-1 md:p-2 rounded duration-300"
-            to="#"
+            to="/people"
           >
             <i className="ri-group-line"></i>People
           </Link>

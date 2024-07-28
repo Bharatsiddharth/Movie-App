@@ -14,7 +14,7 @@ const Trending = () => {
     const [trending, settrending] = useState([])
     const [page, setpage] = useState(1)
     const [hasMore, sethasMore] = useState(true)
-    
+    document.title = "Pico || Trending " + category.toLocaleUpperCase();
 
 
     const GetTrending = async () => {
