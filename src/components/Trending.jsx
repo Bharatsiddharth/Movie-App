@@ -5,36 +5,60 @@ import Dropdown from './partials/Dropdown';
 import axios from '../utils/axios';
 import Cards from './partials/Cards';
 import Loading from './Loading';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Trending = () => {
     const navigate = useNavigate();
     const [category, setcategory] = useState("all")
     const [duration, setduration] = useState("day")
-    const [trending, settrending] = useState(null)
+    const [trending, settrending] = useState([])
+    const [page, setpage] = useState(1)
+    const [hasMore, sethasMore] = useState(true)
     
 
 
     const GetTrending = async () => {
         try {
-            const { data } = await axios.get(`trending/${category}/${duration}`);
-            settrending(data.results)
+            const { data } = await axios.get(`trending/${category}/${duration}?page=${page}`);
+
+            if(data.results.length > 0){
+                settrending((prevState) => [...prevState, ...data.results]);
+                setpage(page + 1);
+            }else{
+                sethasMore(false);
+        }
+            // settrending(data.results)
+            
+            
+            console.log(data)
             
         } catch (error) {
             console.log("Error: " , error)
         }
     }
 
+    const refreshHandler = async() => {
+        if(trending.length === 0){
+            GetTrending();
+        }else{
+            setpage(1);
+            settrending([])
+            GetTrending();
+        }
+    }
 
-    console.log(trending)
+
+    // console.log(trending)
 
     useEffect(() => {
-        GetTrending();
+        // GetTrending();
+        refreshHandler();
     }, [category, duration])
 
-    return trending ? (
-        <div className='p-[3%] w-screen h-screen overflow-hidden overflow-y-auto'>
+    return trending.length > 0 ? (
+        <div className=' w-screen h-screen '>
 
-            <div className='w-full flex items-center justify-center px-10'>
+            <div className='w-full flex items-center justify-center px-[5%]'>
                 <h1 className='text-2xl font-semibold text-zinc-400 flex gap-2 '>
                     <i onClick={() => navigate(-1)} className="ri-arrow-left-line"></i>
                     Trending</h1>
@@ -53,9 +77,14 @@ const Trending = () => {
 
             </div>
 
-
+        <InfiniteScroll 
+            dataLength={trending.length}
+            next={GetTrending}
+            hasMore={hasMore}
+            loader={<h1>Loading</h1>}
+        >
         <Cards data={trending} title={category} />
-
+        </InfiniteScroll>
 
         </div>
     ): <Loading/>
