@@ -19,7 +19,7 @@ const Header = ({data}) => {
 
         
     className='w-[80%]  max-[1025px]:w-[100%] min-[1025px]:ml-[20%] h-[50vh] flex items-start  flex-col justify-end p-[5%] text-white'>
-      <h1 className='w-[70%] text-5xl font-black text-white'>
+      <h1 className='w-[90%] text-[4vw] max-[620px]:text-3xl font-black text-white'>
       {data.name || data.title || data.original_name || data.original_title}
       </h1>
       <p className='w-[70%] max-[1025px]:w-[100%] mt-5'>{data.overview.slice(0,200)}...<Link className='text-blue-400'>More</Link></p>

@@ -12,10 +12,10 @@ const Sidebar = () => {
     <>
       {/* Menu button */}
       <button
-        className="lg:hidden fixed text-2xl ml-80  top-6 left-4 z-50 text-white p-2 rounded-full bg-[#6556CD] hover:bg-[#7a66d7]"
+        className="lg:hidden  fixed text-2xl  top-20 right-2   text-white p-2 rounded-full bg-[#6556CD] hover:bg-[#7a66d7]"
         onClick={handleToggleMenu}
       >
-        <i className={`ri-menu-${menuOpen ? 'fold' : 'unfold'}-line`}></i>
+        <i className={`ri-menu-${menuOpen ? 'fold' : 'unfold'}-line z-[100]`}></i>
       </button>
 
       {/* Sidebar */}
@@ -24,7 +24,7 @@ const Sidebar = () => {
           menuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <h1 className="text-xl md:text-2xl text-white font-bold">
+        <h1 className="text-xl z-[1000] md:text-2xl text-white font-bold">
           <i className="text-[#6556CD] ri-tv-fill mr-2"></i>
           <span className="text-">Sasta-Netflix</span>
         </h1>

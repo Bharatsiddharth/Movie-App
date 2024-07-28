@@ -59,13 +59,13 @@ const People = () => {
   return  person.length > 0 ? (
     <div className=' w-screen h-screen '>
 
-        <div className='w-full flex items-center justify-center px-[5%]'>
+        <div className='w-full flex flex-col sm:flex-row  items-center justify-center px-[5%]'>
             <h1 className='text-2xl font-semibold  text-zinc-400 flex justify-center items-center gap-2 '>
                 <i onClick={() => navigate(-1)} className="ri-arrow-left-line"></i>
                 People 
                 </h1>
 
-            <div className='w-full flex items-center justify-center'>
+            <div className='w-full flex flex-col sm:flex-row items-center justify-center'>
                 <Topnav />
 
                 <Dropdown title="Category" options={["on_the_air", "popular", "top_rated", "airing_today"]}
