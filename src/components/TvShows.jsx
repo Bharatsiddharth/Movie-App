@@ -57,8 +57,8 @@ const TvShows = () => {
   return tv.length > 0 ? (
     <div className=' w-screen h-screen '>
 
-        <div className='w-full flex flex-col sm:flex-row   items-center justify-center px-[5%]'>
-            <h1 className='text-2xl py-5  font-semibold  text-zinc-400 flex justify-center items-center gap-2 '>
+        <div className='w-full flex flex-col sm:flex-row   items-start justify-start px-[5%]'>
+            <h1 className='text-2xl py-5  font-semibold  text-zinc-400 flex justify-start items-center gap-2 '>
                 <i onClick={() => navigate(-1)} className="ri-arrow-left-line"></i>
                 TV-Shows <span className='text-xs text-zinc-700'>({category})</span>
                 </h1>
@@ -81,7 +81,7 @@ const TvShows = () => {
         hasMore={hasMore}
         loader={<h1>Loading</h1>}
     >
-    <Cards data={tv} title={category} />
+    <Cards data={tv} title="tv" />
     </InfiniteScroll>
 
     </div>

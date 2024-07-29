@@ -10,7 +10,7 @@ const Horizontalcards = ({data, func}) => {
       <div className='w-[80%]  max-[1025px]:w-[100%] min-[1025px]:ml-[20%]  text-white  flex overflow-y-hidden '>
 
       {data.map((d,i) => (
-        <div key={i} className='min-w-[15rem] max-[620px]:w-[5rem]      bg-zinc-900  mr-5 '>
+        <Link to={`/${d.media_type || title}/details/${d.id}`} key={i} className='min-w-[15rem] max-[620px]:w-[5rem]      bg-zinc-900  mr-5 '>
           <img className='w-full h-[55%] object-cover' src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || data.poster_path
  }`} alt="" />
 
@@ -21,7 +21,7 @@ const Horizontalcards = ({data, func}) => {
       <p className=' '>{d.overview.slice(0,50)}...<span className='text-blue-400'>More</span></p>
         
 </div>
-      </div>
+      </Link>
       ))}
 
       

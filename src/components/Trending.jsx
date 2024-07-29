@@ -58,16 +58,16 @@ const Trending = () => {
     return trending.length > 0 ? (
         <div className=' w-screen h-screen '>
 
-            <div className="w-full flex flex-col lg:flex-row items-center justify-center px-4 sm:px-[5%]">
-                <h1 className="text-2xl font-semibold text-zinc-400 flex items-center gap-2 mb-4 sm:mb-0">
+            <div className="w-full flex flex-col lg:flex-row items-start justify-center px-4 sm:px-[5%]">
+                <h1 className="text-2xl font-semibold text-zinc-400 flex items-center pt-4 gap-2 mb-4 sm:mb-0">
                     <i onClick={() => navigate(-1)} className="ri-arrow-left-line"></i>
                     Trending
                 </h1>
 
-                <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-4 pb-14 sm:pb-0">
+                <div className="w-full flex flex-col lg:flex-row items-center   gap-4 pb-14 sm:pb-0">
                     <Topnav />
 
-                    <div className="w-full lg:w-1/4 flex items-center gap-4">
+                    <div className="w-full  lg:w-1/4 flex items-center justify-center gap-4">
                         <Dropdown title="Category" options={["movie", "tv", "all"]} func={(e) => setcategory(e.target.value)} />
                         <Dropdown title="Duration" options={["week", "day"]} func={(e) => setduration(e.target.value)} />
                     </div>

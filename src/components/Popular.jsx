@@ -57,12 +57,12 @@ const Popular = () => {
   return popular.length > 0 ? (
     <div className=' w-screen h-screen '>
 
-        <div className='w-full flex flex-col sm:flex-row items-center justify-center px-[5%]'>
+        <div className='w-full flex flex-col sm:flex-row items-start  justify-start pt-5 px-[5%]'>
             <h1 className='text-2xl font-semibold text-zinc-400 flex gap-2 '>
                 <i onClick={() => navigate(-1)} className="ri-arrow-left-line"></i>
                 Popular</h1>
 
-            <div className='w-full flex flex-col sm:flex-row items-center justify-center'>
+            <div className='w-full flex flex-col sm:flex-row items-end   justify-end  '>
                 <Topnav />
 
                 <Dropdown title="Category" options={["tv", "movie"]}

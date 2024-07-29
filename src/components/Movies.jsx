@@ -57,13 +57,13 @@ const Movies = () => {
   return movie.length > 0 ? (
     <div className=' w-screen h-screen '>
 
-        <div className='w-full flex flex-col sm:flex-row  items-center justify-center px-[5%]'>
-            <h1 className='text-2xl font-semibold  text-zinc-400 flex justify-center items-center gap-2 '>
+        <div className='w-full flex flex-col sm:flex-row  items-start justify-start px-[5%]'>
+            <h1 className='text-2xl font-semibold  text-zinc-400 flex justify-center pt-4 items-center gap-2 '>
                 <i onClick={() => navigate(-1)} className="ri-arrow-left-line"></i>
                 Movies <span className='text-sm text-zinc-700'>({category})</span>
                 </h1>
 
-            <div className='w-full flex flex-col sm:flex-row items-center justify-center'>
+            <div className='w-full flex flex-col sm:flex-row items-end justify-end'>
                 <Topnav />
 
                 <Dropdown title="Category" options={["popular", "top_rated", "upcoming", "now_playing"]}
@@ -81,7 +81,7 @@ const Movies = () => {
         hasMore={hasMore}
         loader={<h1>Loading</h1>}
     >
-    <Cards data={movie} title={category} />
+    <Cards data={movie} title="movie" />
     </InfiniteScroll>
 
     </div>

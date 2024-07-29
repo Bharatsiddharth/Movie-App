@@ -44,7 +44,7 @@ const Home = () => {
     !wallpaper && GetheaderWallpaper();
     
   }, [category])
-console.log(trending)
+// console.log(trending)
   return wallpaper  && trending ? (
     <>
     
